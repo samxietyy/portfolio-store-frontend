@@ -5,7 +5,6 @@ import { Zen_Dots, Michroma, Kantumruy_Pro, Zalando_Sans_Expanded } from "next/f
 import Link from "next/link";
 import ProductCard from "@/components/productCard";
 import { Product } from "./types/product";
-import { NotFoundException } from "@nestjs/common";
 
 const zendots = Zen_Dots({subsets: ['latin'],weight: '400'})
 const titles = Zalando_Sans_Expanded({subsets:['latin']})
