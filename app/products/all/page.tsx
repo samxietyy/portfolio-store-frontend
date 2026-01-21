@@ -19,7 +19,14 @@ async function fetchProducts(): Promise<Product[]>{
 
 
 export default async function All(){
-    const products: null | Product[] = await fetchProducts();
+    let products: Product[] = []
+
+    try{
+        products = await fetchProducts()
+    }catch{
+
+    }
+     
 
     return(
         <div>
@@ -40,8 +47,8 @@ export default async function All(){
                 </div>
             </div>
 
-            {products == null && (
-                <div>No products available</div>
+            {products.length==0 && (
+                <div className="w-full flex items-center justify-center mt-3">No products available</div>
             )}
 
             {products!=null && (

@@ -5,16 +5,24 @@ import { Zen_Dots, Michroma, Kantumruy_Pro, Zalando_Sans_Expanded } from "next/f
 import Link from "next/link";
 import ProductCard from "@/components/productCard";
 import { Product } from "./types/product";
+import { NotFoundException } from "@nestjs/common";
 
 const zendots = Zen_Dots({subsets: ['latin'],weight: '400'})
 const titles = Zalando_Sans_Expanded({subsets:['latin']})
 const michroma = Michroma({subsets:['latin'], weight: '400'})
  
 export default async function Home() {
+  let products: null|Product[] = []
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/products`)
-  if (!res.ok) throw new Error("Failed to fetch products..")
-  const products: null|Product[] = await res.json()
+  try{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/products`)
+    if (!res.ok) throw new Error("Failed to fetch products..")
+    products = await res.json()
+  }catch{
+    
+  }
+  
+  
 
 
 
@@ -39,6 +47,11 @@ export default async function Home() {
 
       <div>
         <h1 className={`text-[3rem] ml-3 mt-4 ${titles.className}`}>New arrivals</h1>
+        {products?.length==0 && (
+          <div className="flex items-center justify-center w-full">  
+            No products available
+          </div>
+        ) }
         <div className="
                 w-full
                 pl-1
