@@ -7,7 +7,11 @@ const zendots = Zen_Dots({subsets: ['latin'],weight: '400'})
 
 export default function Footer(){
     return (
-        <div className={`w-full h-30 flex flex-row justify-between px-10 md:px-20 ${titles.className}`}>
+        <div className={`w-full h-30 flex flex-row justify-between border-neutral-400
+                        px-10 md:px-20 ${titles.className} 
+                        lg:h-20 
+                        
+                        `}>
             <div className={`pl-6 flex flex-col lg:flex-row lg:gap-4 items-center justify-center text-[0.8rem]`}>
                 <Link href='/products/all'>Products</Link>
                 <Link href="/lookbook">Lookbook</Link>

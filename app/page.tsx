@@ -5,7 +5,6 @@ import { Zen_Dots, Michroma, Kantumruy_Pro, Zalando_Sans_Expanded } from "next/f
 import Link from "next/link";
 import ProductCard from "@/components/productCard";
 import { Product } from "./types/product";
-import { NotFoundException } from "@nestjs/common";
 
 const zendots = Zen_Dots({subsets: ['latin'],weight: '400'})
 const titles = Zalando_Sans_Expanded({subsets:['latin']})
@@ -35,10 +34,10 @@ export default async function Home() {
             <source src="/videos/home_boxe.mp4" type="video/mp4"/>
           </video>
 
-          <div className={`absolute bottom-24 left-4`}>
+          <div className={`absolute bottom-8 left-4`}>
             {/* <span className="cli-loader font-mono text-lg"></span> */}
             <h1 className={`text-white text-[5.5rem] leading-18 xl:ml-8 ${michroma.className}`}>Who dares wins.</h1>
-            <h2 className={`ml-5 mt-4 -tracking-tighter text-[0.75rem] xl:ml-14  ${titles.className}`}>//SHOP NOW</h2>
+            <h2 className={`ml-5 mt-4 text-[0.65rem] xl:ml-14  ${titles.className}`}>//SHOP NOW</h2>
           </div>
 
         </div>
@@ -46,7 +45,9 @@ export default async function Home() {
 
 
       <div>
-        <h1 className={`text-[3rem] ml-3 mt-4 ${titles.className}`}>New arrivals</h1>
+        <h1 className={`text-[3rem] ml-3 mt-4 
+                        ml-6
+                        ${titles.className}`}>New arrivals</h1>
         {products?.length==0 && (
           <div className="flex items-center justify-center w-full">  
             No products available
@@ -78,24 +79,26 @@ export default async function Home() {
 
 
       <div className="w-full">
-        <h1 className={`text-[3rem] ml-3 mt-4 ${titles.className}`}>Lookbook</h1>
+        <h1 className={`text-[3rem] ml-3 mt-4 ${titles.className}
+                        ml-6
+                      `}>Lookbook</h1>
 
         <div className="w-full grid grid-cols-2">
           <div className="w-full aspect-4/5 relative">
-            <Image src={`${process.env.NEXT_R2_ENDPOINT}/lookbook/lookbook1.jpeg`} alt="Lookbook image 1" fill className="object-cover"></Image>
+            <Image src={`${process.env.NEXT_PUBLIC_R2_ENDPOINT}/lookbook/lookbook1.jpeg`} alt="Lookbook image 1" fill className="object-cover"></Image>
           </div>
 
           <div className="w-full aspect-4/5 relative">
-            <Image src={`${process.env.NEXT_R2_ENDPOINT}/lookbook/lookbook4.jpeg`} alt="Lookbook image 3" fill className="object-cover"></Image>
+            <Image src={`${process.env.NEXT_PUBLIC_R2_ENDPOINT}/lookbook/lookbook4.jpeg`} alt="Lookbook image 3" fill className="object-cover"></Image>
           </div>
           
           <div className="w-full aspect-4/5 relative" >
-            <Image src={`${process.env.NEXT_R2_ENDPOINT}/lookbook/lookbook2.jpeg`} alt="Lookbook image 2" fill className="object-cover"></Image>
+            <Image src={`${process.env.NEXT_PUBLIC_R2_ENDPOINT}/lookbook/lookbook2.jpeg`} alt="Lookbook image 2" fill className="object-cover"></Image>
           </div>
 
           <div className="w-full aspect-4/5 relative overflow-hidden">
             <Image
-              src={`${process.env.NEXT_R2_ENDPOINT}/lookbook/lookbook3.jpeg`}
+              src={`${process.env.NEXT_PUBLIC_R2_ENDPOINT}/lookbook/lookbook3.jpeg`}
               alt="Lookbook image 2"
               fill
               className="object-cover"

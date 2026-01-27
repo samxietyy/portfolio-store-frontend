@@ -18,6 +18,8 @@ export default function Account(){
         .catch(() => setLogged(false))
     })
 
+
+
     if(logged) return(
         <div>
             <UserDashboard></UserDashboard>

@@ -1,4 +1,5 @@
 export type sizeStock = {
     size: string,
-    inStock: boolean
+    inStock: boolean,
+    sku: string
 }

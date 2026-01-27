@@ -46,7 +46,7 @@ export default function Sidebar({open, onClose}: {open: boolean, onClose: ()=>vo
             <nav className="">
                 <ul className={`flex flex-col items-start gap-4 pt-12 pl-8 text-2xl ${titles.className} text-gray-300 `}>
                     <li onClick={()=>onClose()}><Link href="/products/all">Products</Link></li>
-                    <li onClick={()=>onClose()}> <Link href="/lookbook">Lookbook</Link></li>
+                    <li onClick={()=>onClose()}><Link href="/lookbook">Lookbook</Link> <p className="text-[0.6rem]">(under construction)</p></li>
                     <li onClick={()=>onClose()}><Link href="/about">About</Link></li>
                     <li onClick={()=>onClose()}><Link href="/faq">Faq</Link></li>
                     {/* cambiare posizione account, inserire loogin piu in alto/basso */}

@@ -114,8 +114,9 @@ export default function UserLoginSignup(){
 
     
     return(
-        <div>
-            <div className="w-full h-12 flex flex-row items-center justify-center my-6 text-[1.2rem]">
+        <div className="flex flex-col items-center ">
+            <div className="w-full h-12 flex flex-row items-center justify-center my-6 text-[1.2rem]
+                            md:w-[40vw] md:mt-14">
                 <button className={`w-[45%] h-full border-b  ${showPanel==='login' ? "border-neutral-200 text-neutral-200" : "border-neutral-400 text-neutral-400"}`}
                     onClick={()=>setPanel("login")}>LOG IN</button>
                 <button className={`w-[45%] h-full items-center border-b border-neutral-300 ${showPanel==='login' ? "border-neutral-400 text-neutral-400" : "border-neutral-200 text-neutral-200"}`} 
@@ -123,7 +124,8 @@ export default function UserLoginSignup(){
             </div>
 
             {showPanel == "login" && (
-                    <div className={`w-full h-full flex flex-col mt-2`}>
+                    <div className={`w-full h-full flex flex-col mt-2 
+                                    md:w-[40vw]`}>
                         <form onSubmit={submitLogin} className="w-full h-full flex flex-col items-center justify-center gap-6">
                             <div className="w-[90%]">
                                 <span className="self-start text-[0.75rem] pl-1">Email address *</span>
@@ -155,7 +157,8 @@ export default function UserLoginSignup(){
             )}
 
             {showPanel == "register" && (
-                    <form onSubmit={submitRegistration} className="w-full h-full flex flex-col items-center gap-6">
+                    <form onSubmit={submitRegistration} className="w-full h-full flex flex-col items-center gap-6
+                                                                    md:w-[40vw]">
 
                         <div className="flex flex-row items-between w-[90%] gap-2">
                             <div className="w-[90%]">

@@ -29,7 +29,7 @@ export default function ProductCard({product}:{product: Product}){
             <Link href={`/products/${product.id}`}>
             <div className="relative w-full aspect-[3/4] bg-white">
                 <Image
-                src={`${process.env.NEXT_R2_ENDPOINT}/product-images/${imageUrls[0]}`}
+                src={`${process.env.NEXT_PUBLIC_R2_ENDPOINT}/product-images/${imageUrls[0]}`}
                 alt={`Image of ${product.productName}`}
                 fill
                 className="object-cover"
