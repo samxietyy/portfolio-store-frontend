@@ -41,8 +41,6 @@ export default function UserLoginSignup(){
         }
 
         //api call
-
-
         setLoading(true);
         const res = await fetch(`${api_url}/auth/login`, {
             method: 'POST',
@@ -59,8 +57,6 @@ export default function UserLoginSignup(){
         }
 
         window.location.reload()
-
-
     }
 
     async function submitRegistration(e: React.FormEvent){

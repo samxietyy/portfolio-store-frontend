@@ -11,6 +11,7 @@ export default function Account(){
     useEffect(()=>{
         fetch(`${process.env.NEXT_PUBLIC_API}/auth/me`, {
             method: 'GET',
+            headers: { 'Content-Type': 'application/json'},
             credentials: 'include',
             cache: 'no-store'
         })
