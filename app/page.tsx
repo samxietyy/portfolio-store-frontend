@@ -1,26 +1,32 @@
 
-
 import Image from "next/image";
 import { Zen_Dots, Michroma, Kantumruy_Pro, Zalando_Sans_Expanded } from "next/font/google";
 import Link from "next/link";
 import ProductCard from "@/components/productCard";
 import { Product } from "./types/product";
 
-const zendots = Zen_Dots({subsets: ['latin'],weight: '400'})
 const titles = Zalando_Sans_Expanded({subsets:['latin']})
 const michroma = Michroma({subsets:['latin'], weight: '400'})
  
-export default async function Home() {
-  let products: null|Product[] = []
 
-  try{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/products`)
-    if (!res.ok) throw new Error("Failed to fetch products..")
-    products = await res.json()
-  }catch{
-    
-  }
+
+export default async function Home() {
   
+  async function getProducts(): Promise<Product[]> {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API}/products`,
+      {
+        cache: 'no-store',
+      }
+    )
+
+    if (!res.ok) {
+      throw new Error('Failed to fetch products')
+    }
+    return res.json()
+  }
+
+  const products = await getProducts()
   
 
 
@@ -64,7 +70,7 @@ export default async function Home() {
                 gap-3
                 pl-2
                 ">
-          {products!= null && products.map((product) => (
+          {products!=null && products.map((product) => (
             <div key={product.id} className="
               shrink-0 w-1/2
               md:w-[20rem]
@@ -115,15 +121,6 @@ export default async function Home() {
 
         </div>
       </div>
-
-
-
-      <div>
-
-      </div>
-
-
-
     </div>
   );
 }

@@ -35,14 +35,12 @@ export default function UserDashboard(){
             method: 'POST',
             credentials: 'include'
         })
-        
         if(!res.ok){
             setError("Something went wrong. Try again.")
             return
         }
         
         window.location.reload()
-   
     }
 
     
