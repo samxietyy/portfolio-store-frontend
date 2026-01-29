@@ -126,14 +126,14 @@ export default function UserLoginSignup(){
                             <div className="w-[90%]">
                                 <span className="self-start text-[0.75rem] pl-1">Email address *</span>
                                 <input
-                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4"
+                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400"
                                     type="name" placeholder="Email Address" value={loginForm.email} onChange={(e)=>setLoginForm({...loginForm, email: e.target.value})} />
                             </div>
 
                             <div className="w-[90%]">
                                 <span className="self-start text-[0.75rem] pl-1">Password *</span>
                                 <input
-                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4" 
+                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400" 
                                     type="password" placeholder="Password" value={loginForm.password} onChange={(e)=>setLoginForm({...loginForm, password: e.target.value})} />
                             </div>
 
@@ -160,14 +160,14 @@ export default function UserLoginSignup(){
                             <div className="w-[90%]">
                                 <span className="self-start text-[0.75rem] pl-1">First name *</span>
                                 <input
-                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4"
+                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400"
                                     type="string" placeholder="First name" value={registerForm.firstName} onChange={(e)=>setRegisterForm({...registerForm, firstName: e.target.value})} />
                             </div>
 
                             <div className="w-[90%]">
                                 <span className="self-start text-[0.75rem] pl-1">Last name *</span>
                                 <input
-                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4"
+                                    className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400"
                                     type="string" placeholder="Last name" value={registerForm.lastName} onChange={(e)=>setRegisterForm({...registerForm, lastName: e.target.value})} />
                             </div>
 
@@ -176,21 +176,21 @@ export default function UserLoginSignup(){
                         <div className="w-[90%] ">
                             <span className="self-start text-[0.75rem] pl-1">Email address *</span>
                             <input
-                                className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4"
+                                className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400"
                                 type="email" placeholder="Email Address" value={registerForm.email} onChange={(e)=>setRegisterForm({...registerForm, email: e.target.value})} />
                         </div>
 
                         <div className="w-[90%]">
                             <span className="self-start text-[0.75rem] pl-1">Password *</span>
                             <input
-                                className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4"
+                                className="w-full h-10 border border-neutral-400 rounded-[0.2rem] pl-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400"
                                 type="password" placeholder="Password" value={registerForm.password} onChange={(e)=>setRegisterForm({...registerForm, password: e.target.value})} />
                         </div>
 
                         <div className="w-[90%]">
                             <span className="self-start text-[0.75rem] pl-1">Date of birth *</span>
                             <input
-                                className="w-full h-10 border border-neutral-400 rounded-[0.2rem] px-4"
+                                className="w-full h-10 border border-neutral-400 rounded-[0.2rem] px-4 focus:outline-none focus:ring-1 focus:ring-neutral-400 focus:border-neutral-400"
                                 type="date" placeholder="Date of birth" value={registerForm.DOB} onChange={(e)=>setRegisterForm({...registerForm, DOB: e.target.value})} />
                         </div>
 

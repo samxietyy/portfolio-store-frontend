@@ -114,7 +114,7 @@ export default async function ProductPage( {params}: { params: Promise<{ id: str
                 xl:mt-12 xl:mb-4'>
                     <div>
                         <h1 className='text-[1.1rem]'>{product.productName}</h1>
-                        <h2 className='text-neutral-400 text-[0.8rem] ml-1'>{product.color}</h2>
+                        <h2 className='text-neutral-400 text-[0.8rem]'>{product.color}</h2>
                     </div>
                     
                     {product.isOos ? (

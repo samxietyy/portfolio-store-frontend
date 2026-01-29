@@ -4,6 +4,7 @@ import { Zen_Dots, Michroma, Kantumruy_Pro, Zalando_Sans_Expanded } from "next/f
 import Link from "next/link";
 import ProductCard from "@/components/productCard";
 import { Product } from "./types/product";
+import WelcomePopup from "@/components/welcomePopup";
 
 const titles = Zalando_Sans_Expanded({subsets:['latin']})
 const michroma = Michroma({subsets:['latin'], weight: '400'})
@@ -11,7 +12,7 @@ const michroma = Michroma({subsets:['latin'], weight: '400'})
 
 
 export default async function Home() {
-  
+
   async function getProducts(): Promise<Product[]> {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API}/products`,
@@ -34,6 +35,8 @@ export default async function Home() {
 
   return (
     <div className="w-full h-full flex flex-col">
+      <WelcomePopup/>
+
       <Link href="/products/all">
         <div className="relative w-full h-[80vh] overflow-hidden rounded-lg">
           <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
