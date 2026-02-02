@@ -14,8 +14,9 @@ export default function WelcomePopup() {
         const hasSeenPopup = localStorage.getItem('hasSeenWelcomePopup');
 
         if (!hasSeenPopup) {
-        setVisible(true);
+            setVisible(true);
         }
+        
     }, []);
 
     const closePopup = () => {
@@ -23,8 +24,8 @@ export default function WelcomePopup() {
         setVisible(false);
     };
 
+    
     if (!visible) return null;
-
 
 
     return (

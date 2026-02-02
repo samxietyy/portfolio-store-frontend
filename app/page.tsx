@@ -1,10 +1,10 @@
-
+import dynamic from 'next/dynamic';
 import Image from "next/image";
 import { Zen_Dots, Michroma, Kantumruy_Pro, Zalando_Sans_Expanded } from "next/font/google";
 import Link from "next/link";
 import ProductCard from "@/components/productCard";
 import { Product } from "./types/product";
-import WelcomePopup from "@/components/welcomePopup";
+import ClientWelcomePopup from '@/components/clientWelcomePopup';
 
 const titles = Zalando_Sans_Expanded({subsets:['latin']})
 const michroma = Michroma({subsets:['latin'], weight: '400'})
@@ -35,7 +35,7 @@ export default async function Home() {
 
   return (
     <div className="w-full h-full flex flex-col">
-      <WelcomePopup/>
+      <ClientWelcomePopup/>
 
       <Link href="/products/all">
         <div className="relative w-full h-[80vh] overflow-hidden rounded-lg">
