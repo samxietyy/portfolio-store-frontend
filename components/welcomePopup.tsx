@@ -29,8 +29,10 @@ export default function WelcomePopup() {
 
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-            <div className={`w-[90%] max-w-md rounded-xl bg-neutral-400 p-6 shadow-xl md:p-8 ${titles.className} text-black`}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50
+            ">
+            <div className={`w-[90%] max-w-md rounded-xl bg-neutral-400 p-6 shadow-xl md:p-8 ${titles.className} text-black
+                            xl:max-h-[90vh] xl:min-w-[40vw]`}>
                 <h2 className=" text-xl font-semibold ">
                     Warning
                 </h2>
